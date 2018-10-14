@@ -52,7 +52,18 @@ public class ShoppingCart {
         }
         catch(final IndexOutOfBoundsException e){
             System.out.println("Unable to delete with index : " + index);
-            System.out.println(e);
+            e.printStackTrace();
+        }
+    }
+
+    public void updateCartItem(int index, int quantity){
+        try {
+            var carItem = cartItems.get(index);
+            carItem.setQuantity(quantity);
+        }
+        catch(final IndexOutOfBoundsException e){
+            System.out.println("Unable to update with index : " + index);
+            e.printStackTrace();
         }
     }
 
